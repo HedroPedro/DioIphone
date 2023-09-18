@@ -8,6 +8,18 @@ public class AparelhoTelefone {
     private Long numero;
     private boolean estaNoCorreioDeVoz = false;
 
+    public Long getNumero() {
+        return numero;
+    }
+
+    public List<Long> getContatos() {
+        return contatos;
+    }
+
+    public boolean isEstaNoCorreioDeVoz() {
+        return estaNoCorreioDeVoz;
+    }
+
     public AparelhoTelefone(Long numero){
         contatos = new ArrayList<Long>();
         this.numero = numero;

@@ -15,12 +15,15 @@ public class Iphone{
 
     public static void main(String[] args){
         Iphone iphone = new Iphone(551499999L);
+        System.out.println("Modelo: " + iphone.MODELO);
         iphone.reprodutorDeMusica.adicionarMusica(new Musica("River of despair", "The Binding of issac Team", new Date(2021, 02, 01), "rock", "game music"));
         iphone.reprodutorDeMusica.tocar();
         System.out.println("A musica " + iphone.reprodutorDeMusica.getMusicaAtual().getNome() + " esta sendo tocada");
         iphone.contatos.adicionarContato(5512349999L);
         iphone.contatos.ligarParaNumero(5512349999L);
-                 
+        iphone.navegadorInternet.adicionarAba("google.com");
+        iphone.navegadorInternet.exibirPagina(1);
+        System.out.println("Pagina atual "+ iphone.navegadorInternet.getPaginaAtual());
     }
 
     public Iphone(Long numero){

@@ -14,6 +14,10 @@ public class ReprodutorDeMusica {
         return musicaAtual;
     }
 
+    public boolean isEstaTocando() {
+        return estaTocando;
+    }
+
     public List<Musica> getBibliotecaMusicas() {
         return bibliotecaMusicas;
     }
