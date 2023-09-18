@@ -11,10 +11,26 @@ public class Musica{
     private List<String> generosMusicais;
     private Date dataDeLancamento;
     
-    public Musica(String nome, String autor, String[] generosMusicais, Date dataDeLancamento){
+    public Musica(String nome, String autor, Date dataDeLancamento,  String... generosMusicais){
         this.nome = nome;
         this.autor = autor;
         this.generosMusicais = new ArrayList<String>(Arrays.asList(generosMusicais));
         this.dataDeLancamento = dataDeLancamento;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public List<String> getGenerosMusicais() {
+        return generosMusicais;
+    }
+
+    public Date getDataDeLancamento() {
+        return dataDeLancamento;
     }
 }

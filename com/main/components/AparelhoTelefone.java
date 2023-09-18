@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AparelhoTelefone {
-    List<Long> contatos;
+    private List<Long> contatos;
+    private Long numero;
+    private boolean estaNoCorreioDeVoz = false;
 
-    public AparelhoTelefone(){
+    public AparelhoTelefone(Long numero){
         contatos = new ArrayList<Long>();
+        this.numero = numero;
     }
 
     public List<Long> listarContatos(){
@@ -29,5 +32,13 @@ public class AparelhoTelefone {
 
     public void ligarParaNumero(Long numero){
         System.out.println("Ligando para o numero " + numero);
+    }
+
+    public void inciarCorreioDeVoz(){
+        estaNoCorreioDeVoz = true;
+    }
+
+    public void atenderChamada(){
+        System.out.println("Atendendo ligação...");
     }
 }
