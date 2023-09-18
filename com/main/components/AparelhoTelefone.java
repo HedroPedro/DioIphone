@@ -26,4 +26,8 @@ public class AparelhoTelefone {
             }
         }
     }
+
+    public void ligarParaNumero(Long numero){
+        System.out.println("Ligando para o numero " + numero);
+    }
 }
