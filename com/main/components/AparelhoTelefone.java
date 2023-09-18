@@ -16,7 +16,7 @@ public class AparelhoTelefone {
         return contatos;
     }
 
-    public boolean isEstaNoCorreioDeVoz() {
+    public boolean estaNoCorreioDeVoz() {
         return estaNoCorreioDeVoz;
     }
 
@@ -46,8 +46,8 @@ public class AparelhoTelefone {
         System.out.println("Ligando para o numero " + numero);
     }
 
-    public void inciarCorreioDeVoz(){
-        estaNoCorreioDeVoz = true;
+    public void inciarOuEncerrarOCorreioDeVoz(){
+        estaNoCorreioDeVoz = !estaNoCorreioDeVoz;
     }
 
     public void atenderChamada(){

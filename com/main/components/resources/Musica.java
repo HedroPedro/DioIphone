@@ -18,6 +18,11 @@ public class Musica{
         this.dataDeLancamento = dataDeLancamento;
     }
 
+    @Override
+    public String toString() {
+        return String.format("{Titulo: %s;Autor: %s;Generos musicais: %s;Data de lançamento: %s}", nome, autor, generosMusicais.toString(), dataDeLancamento.toString());
+    }
+
     public String getNome() {
         return nome;
     }

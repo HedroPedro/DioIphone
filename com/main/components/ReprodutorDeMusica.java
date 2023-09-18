@@ -6,7 +6,7 @@ import java.util.List;
 import com.main.components.resources.Musica;
 
 public class ReprodutorDeMusica {
-    private List<Musica> bibliotecaMusicas;
+    private List<Musica> bibliotecaMusica;
     private Musica musicaAtual = null;
     private boolean estaTocando = false;
 
@@ -14,16 +14,16 @@ public class ReprodutorDeMusica {
         return musicaAtual;
     }
 
-    public boolean isEstaTocando() {
+    public boolean estaTocando() {
         return estaTocando;
     }
 
     public List<Musica> getBibliotecaMusicas() {
-        return bibliotecaMusicas;
+        return bibliotecaMusica;
     }
 
     public ReprodutorDeMusica(){
-        bibliotecaMusicas = new ArrayList<>();
+        bibliotecaMusica = new ArrayList<>();
     }
 
     public void pausar(){
@@ -31,12 +31,13 @@ public class ReprodutorDeMusica {
     }
 
     public void tocar(){
-        musicaAtual = bibliotecaMusicas.get(0);
+        if(musicaAtual == null && !bibliotecaMusica.isEmpty())
+            musicaAtual = bibliotecaMusica.get(0);
         estaTocando = true;
     }
 
     public void selecionarMusica(String musicaDesejada){
-        for(Musica musica : bibliotecaMusicas){
+        for(Musica musica : bibliotecaMusica){
             if(musica.getNome().equals(musicaDesejada)){
                 musicaAtual = musica;
             }
@@ -44,7 +45,16 @@ public class ReprodutorDeMusica {
     }
 
     public void adicionarMusica(Musica musicaNova){
-        bibliotecaMusicas.add(musicaNova);
+        bibliotecaMusica.add(musicaNova);
+    }
+
+    public void removerMusica(String musicaParaRemover){
+        for(Musica musica : bibliotecaMusica){
+            if(musica.getNome().equals(musicaParaRemover)){
+                bibliotecaMusica.remove(musica);
+                return;
+            }
+        }
     }
 
 }
